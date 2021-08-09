@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: #002244;
+}
+.cards-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+
+}
+.cards-container .card {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+.cards-container .card::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50px;
+   width: 70%;
+   height: 100%;
+   background: #fff;
+   border-radius: 10px;
+   transform: skewY(10deg);
+   transition: 0.5s;
+}
+
+.cards-container .card::after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50px;
+   width: 80%;
+   height: 100%;
+   background: #fff;
+   border-radius: 10px;
+   transform: skewY(10deg);
+   transition: 0.5s;
+   filter: blur(30px);
+   transition: 0.5s;
+}
+
+.cards-container .card:hover:before,
+.cards-container .card:hover:after{
+    transform: skewY(0deg);
+    left: 20px;
+    width: calc(100% - 100px);
+}
+
+.cards-container .card:nth-child(1):before,
+.cards-container .card:nth-child(1):after{
+    background: linear-gradient(315deg,rgb(127,255,0),rgba(255,36,0,0.4));
+}
+
+.cards-container .card:nth-child(2):before,
+.cards-container .card:nth-child(2):after{
+    background: linear-gradient(315deg,#7DF9FF,#e39ff6);
+}
+.cards-container .card:nth-child(3):before,
+.cards-container .card:nth-child(3):after{
+    background: linear-gradient(210deg,rgb(41,171,135),rgb(255,0,255));
+}
+
+
+
+.card-content{
+    position: relative;
+    left:0;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    transform: 0.5s;
+    color: #fff;
+
+    /* display:none; */
+}
+.cards-container .card:hover .card-content{
+    left: -25px;
+    padding: 60px 40px;
+}
+
+.cards-container .card .card-content h2{
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+} 
+.cards-container .card .card-content p{
+    font-size: 1.1em;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+
